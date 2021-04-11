@@ -1,0 +1,72 @@
+{
+  "name": "springfeng",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "bootstrap": "yarn || npm i",
+    "build:dev": "vue-cli-service build --mode development",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:test": "vue-cli-service build --mode test"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bmaplib.distancetool": "^1.0.2",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.8.25",
+    "e-icon-picker": "^1.0.4",
+    "echarts": "^4.7.0",
+    "element-ui": "^2.13.1",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.26.0",
+    "resize-detector": "^0.2.1",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "v-viewer": "^1.5.1",
+    "vue": "^2.6.10",
+    "vue-baidu-map": "^0.21.22",
+    "vue-class-component": "^7.2.3",
+    "vue-prevent-browser-back": "^1.0.5",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.3.0",
+    "vxe-table": "^2.9.17",
+    "xe-utils": "^2.7.8",
+    "xlsx": "^0.15.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "babel-eslint": "^10.0.3",
+    "compression-webpack-plugin": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^9.4.2",
+    "sass": "^1.23.3",
+    "sass-loader": "^8.0.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
