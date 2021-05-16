@@ -1,27 +1,29 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <el-button @click="toList" type="primary">客户列表</el-button>
-    <!-- <div @click="toList">customerList</div> -->
+    <el-button @click="toTemplate" type="primary">模板页</el-button>
+    <div ref="cat"></div>
+    <jsx-heading :level="2">测试</jsx-heading>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { Greeter } from './customer'
-@Component
+import jsxHeading from './render/jsx-heading'
+@Component({
+  components: { jsxHeading },
+})
 export default class HelloWorld extends Vue {
-  @Prop() private msg!: string
-  activated() {
-    console.log(this)
-  }
-  created() {
-    console.log(this)
-  }
+  activated() {}
+  mounted() {}
+  created() {}
   toList() {
     let customerGreeter = new Greeter('wolrd')
-
-    console.log(customerGreeter.greet)
+    customerGreeter.greet()
+    this['$router'].push({ path: 'customerList' })
+  }
+  toTemplate() {
     this['$router'].push({ path: 'customerList' })
   }
 }

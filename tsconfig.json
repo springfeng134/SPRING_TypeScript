@@ -37,5 +37,9 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "typesRoot": [
+    "./node_modules/@types",
+    "./types"
   ]
 }

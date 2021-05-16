@@ -18,6 +18,7 @@ const install = () => {
   // 递归
   requireComponent.keys().forEach(fileName => {
     let config = requireComponent(fileName)
+    // console.log(fileName)
     // console.log(config)
     let componentName = changeStr(
       fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')

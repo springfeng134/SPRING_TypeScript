@@ -8,13 +8,21 @@
 <script lang="ts">
 // import BaiduMapTest from './components/baiduMap.vue'
 import { Component, Vue } from 'vue-property-decorator'
+import anchoredHeading from '@/components/render/anchored-heading'
+// import jsxHeading from '@/components/render/jsx-heading.vue'
+
 @Component({
   // components: {
   //   BaiduMapTest,
   // },
 })
 export default class App extends Vue {
-  private created() {}
+  created() {
+    const anchoredHeadingts: any = anchoredHeading
+    anchoredHeadingts.install()
+    // const heading = new anchoredHeadingts.Heading().$mount('#app')
+    // document.body.appendChild(heading.$el)
+  }
 }
 </script>
 

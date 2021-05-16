@@ -4,7 +4,8 @@ import BaiduMap from './utils/vue-baidu-map/'
 import router from './router/'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import component from './components/global.js'
+// import component from './components/global.js'
+// component.install()
 const vm = new Vue()
 Vue.use(Element, {
   size: 'mini'
@@ -14,7 +15,6 @@ Vue.use(BaiduMap, {
   ak: 'rd7c3jggMiQS8zzwZPj0Ue5heANq3ZGK'
 })
 Vue.config.productionTip = false
-component.install()
 
 router.beforeEach((to: any, from, next) => {
   if (to.meta.requireAuth) {
@@ -55,6 +55,8 @@ function promiseMock() {
     })
   })
 }
+
+window.eventBus = new Vue()
 
 new Vue({
   render: h => h(App),
